@@ -1,0 +1,11 @@
+{% extends 'AcmeWakkoBundle::testbase.html.twig' %}
+{% block body %}
+    {% for post in posts %}
+        <article class="post">
+            lkjslkj
+            {{ post.id }}
+            {{ post.scheduleTime|date('Y-m-d') }}
+        </article>
+    {% endfor %}
+
+{% endblock %}

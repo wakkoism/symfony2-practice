@@ -1,0 +1,13 @@
+acme_wakko:
+    resource: "@AcmeWakkoBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+acme_test:
+    resource: "@AcmeTestBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
