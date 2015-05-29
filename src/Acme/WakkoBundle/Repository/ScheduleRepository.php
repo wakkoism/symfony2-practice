@@ -5,11 +5,11 @@ namespace Acme\WakkoBundle\Repository;
 use Doctrine\ORM\EntityRepository;
 use Acme\WakkoBundle\Entity\Schedule;
 
-/**
- *
- */
 class ScheduleRepository extends EntityRepository
 {
+    /**
+     * Get number of pager items
+     */
     public function findLatest($limit = Schedule::NUM_ITEMS)
     {
         $query = $this

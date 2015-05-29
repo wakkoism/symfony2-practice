@@ -30,7 +30,7 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('AcmeWakkoBundle:User')->findAll();
-        var_dump('index');
+
         return array(
             'entities' => $entities,
         );

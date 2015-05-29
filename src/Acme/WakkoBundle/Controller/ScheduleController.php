@@ -30,7 +30,7 @@ class ScheduleController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('AcmeWakkoBundle:Schedule')->findAll();
-        var_dump($entities);
+
         return array(
             'entities' => $entities,
         );

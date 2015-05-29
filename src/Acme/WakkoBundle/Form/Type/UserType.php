@@ -1,6 +1,6 @@
 <?php
 
-namespace Acme\WakkoBundle\Form;
+namespace Acme\WakkoBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
