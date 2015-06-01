@@ -51,7 +51,7 @@ class AccountController extends Controller
             $em->persist($registration->getUser());
             $em->flush();
 
-            return $this->redirectToRoute('wakko/user');
+            return $this->redirectToRoute('wakko_user');
         }
 
         return $this->render(

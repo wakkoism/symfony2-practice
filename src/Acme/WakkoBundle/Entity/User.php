@@ -24,6 +24,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity
  * @UniqueEntity("email")
  * @UniqueEntity("username", message="Username is already taken")
+ * @ORM\HasLifecycleCallbacks()
  */
 class User implements UserInterface
 {
@@ -60,7 +61,7 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="roles", type="blob", nullable=false)
+     * @ORM\Column(name="roles", type="json_array", nullable=false)
      */
     private $roles;
 
@@ -303,4 +304,16 @@ class User implements UserInterface
     {
         return $this->username;
     }
+
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+     public function updateUserDate()
+     {
+         $this->setUpdated(new \DateTime());
+         if ($this->getCreated() == null) {
+             $this->setCreated(new \DateTime());
+         }
+     }
 }
